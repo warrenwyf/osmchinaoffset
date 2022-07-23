@@ -17,6 +17,7 @@ void print_usage(const char* prgname) {
 
 void print_help() {
   std::cout << "osmchinaoffset [OPTIONS] [IN_FILE [OUT_FILE]]\n\n"
+            << "Offset the OSM data coordinates within China to GCJ-02.\n"
             << "If IN_FILE or OUT_FILE is not given, stdin/stdout is assumed.\n"
             << "File format is autodetected from file name suffix.\n"
             << "\nFile format:\n"
