@@ -1,3 +1,14 @@
+# Editors
+*.sublime-*
+.vscode
+
+# Other
+.DS_Store
+
+# Built files
+debug
+release
+
 # Prerequisites
 *.d
 

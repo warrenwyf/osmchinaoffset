@@ -1,0 +1,11 @@
+Language: Cpp
+BasedOnStyle: LLVM
+
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: true
+ColumnLimit: 100
+PointerAlignment: Left
