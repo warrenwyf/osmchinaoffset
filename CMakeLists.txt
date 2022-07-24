@@ -24,7 +24,7 @@ file(GLOB_RECURSE SRCS "src/*.cc")
 # =============================================================================
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-find_package(Osmium 2.18.0 REQUIRED COMPONENTS pbf xml io)
+find_package(Osmium 2.18.0 REQUIRED COMPONENTS io)
 
 
 set(INCLUDE_DIRS
@@ -34,6 +34,7 @@ set(INCLUDE_DIRS
 set(LIBS
 	${OSMIUM_LIBRARIES}
     )
+
 
 # =============================================================================
 # define exec target
