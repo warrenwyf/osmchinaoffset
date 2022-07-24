@@ -1,6 +1,7 @@
 osmchinaoffset
 --------------
 Offset the OSM data coordinates within China to GCJ-02
+
 将中国范围内的 OSM 数据坐标偏移为 GCJ-02「火星坐标系」
 
 
