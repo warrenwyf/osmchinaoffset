@@ -16,28 +16,13 @@ $ osmchinaoffset china.osm.pbf china-offset.osm.pbf
 
 #### Prerequisites:
 
-###### C++14
+``` macOS
+$ brew install cmake libosmium googletest
+```
 
-###### cmake >= 3.20
-- Homebrew: cmake
-- Debian/Ubuntu: cmake
-- Fedora/CentOS: cmake
-
-###### libosmium >= 2.18.0
-- Homebrew: libosmium
-- Debian/Ubuntu: libosmium2-dev
-- Fedora/CentOS: libosmium-devel
-
-###### protozero >= 1.6.3
-- MacPorts: protozero
-- Debian/Ubuntu: libprotozero-dev
-- Fedora/CentOS: protozero-devel
-
-###### expat
-- Homebrew: expat
-- Debian/Ubuntu: libexpat1-dev
-- Fedora/CentOS: expat-devel
-
+``` Ubuntu
+$ sudo apt install cmake libosmium2-dev libgtest-dev
+```
 
 #### Build:
 

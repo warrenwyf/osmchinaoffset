@@ -1,11 +1,9 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.10)
 
 file(STRINGS VERSION VERSION LIMIT_COUNT 1)
 project("osmchinaoffset" VERSION ${VERSION})
 
 set(CMAKE_CXX_STANDARD 14)
-
-enable_testing()
 
 message("[***] CMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}")
 message("[***] CMAKE_SYSTEM_PROCESSOR=${CMAKE_SYSTEM_PROCESSOR}")
@@ -24,7 +22,7 @@ file(GLOB_RECURSE SRCS "src/*.cc")
 # =============================================================================
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-find_package(Osmium 2.18.0 REQUIRED COMPONENTS io)
+find_package(Osmium REQUIRED COMPONENTS io)
 
 
 set(INCLUDE_DIRS
@@ -60,15 +58,19 @@ install(TARGETS ${PROJECT_NAME}
 # =============================================================================
 # Tests
 # =============================================================================
-find_package(GTest REQUIRED)
-message("GTest_VERSION=${GTest_VERSION}")
+if(CMAKE_BUILD_TYPE STREQUAL Debug)
+    enable_testing()
 
-file(GLOB_RECURSE TESTS "test/*.test.cc")
+    find_package(GTest REQUIRED)
+    message("GTest_VERSION=${GTest_VERSION}")
 
-add_executable(${PROJECT_NAME}_test ${TESTS})
-target_include_directories(${PROJECT_NAME}_test PRIVATE ${INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME}_test PRIVATE ${LIBS})
-target_link_libraries(${PROJECT_NAME}_test PRIVATE GTest::gtest GTest::gtest_main)
+    file(GLOB_RECURSE TESTS "test/*.test.cc")
 
-include(GoogleTest)
-gtest_add_tests(TARGET ${PROJECT_NAME}_test)
+    add_executable(${PROJECT_NAME}_test ${TESTS})
+    target_include_directories(${PROJECT_NAME}_test PRIVATE ${INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME}_test PRIVATE ${LIBS})
+    target_link_libraries(${PROJECT_NAME}_test PRIVATE GTest::gtest GTest::gtest_main)
+
+    include(GoogleTest)
+    gtest_add_tests(TARGET ${PROJECT_NAME}_test)
+endif()
