@@ -16,11 +16,11 @@ $ osmchinaoffset china.osm.pbf china-offset.osm.pbf
 
 #### Prerequisites:
 
-``` macOS
+``` bash
+# macOS
 $ brew install cmake libosmium googletest
-```
 
-``` Ubuntu
+# Ubuntu
 $ sudo apt install cmake libosmium2-dev libgtest-dev
 ```
 
