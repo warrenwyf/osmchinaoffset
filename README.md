@@ -27,8 +27,8 @@ $ sudo apt install cmake libosmium2-dev libgtest-dev
 #### Build:
 
 ``` bash
-$ ./build.sh             # Build debug
-$ ./build.sh test        # Build debug and run tests
-$ ./build.sh release     # Build release
-$ ./build.sh install     # Build release and install
+$ ./build.sh                  # Build debug
+$ ./build.sh test             # Build debug and run tests
+$ ./build.sh release          # Build release
+$ sudo ./build.sh install     # Build release and install
 ```
